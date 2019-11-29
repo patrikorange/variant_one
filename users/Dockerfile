@@ -10,8 +10,6 @@ RUN wget https://github.com/phalcon/phalcon-devtools/archive/v3.4.3.tar.gz \
  && mv phalcon-devtools-3.4.3 /usr/src/phalcon-devtools \
  && ln -sf /usr/src/phalcon-devtools/phalcon /usr/local/bin/phalcon
 
-WORKDIR /var/www/html
-
-CMD phalcon migration run
+WORKDIR /var/www/html/
 
 CMD phalcon serve --port=80

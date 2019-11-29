@@ -13,7 +13,6 @@ services:
   users:
     container_name: users
     build: users
-
     volumes:
       - ./users:/var/www/html
     networks:

@@ -10,7 +10,6 @@ services:
     networks:
       - backend-network
       - frontend-network
-      -
   users:
     container_name: users
     build: users

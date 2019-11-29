@@ -12,4 +12,6 @@ RUN wget https://github.com/phalcon/phalcon-devtools/archive/v3.4.3.tar.gz \
 
 WORKDIR /var/www/html/
 
-CMD phalcon serve --port=80
+COPY ./entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+
+ENTRYPOINT ["sh", "/usr/local/bin/docker-entrypoint.sh"]

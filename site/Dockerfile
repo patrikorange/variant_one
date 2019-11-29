@@ -6,6 +6,8 @@ RUN wget https://github.com/phalcon/phalcon-devtools/archive/v3.4.3.tar.gz \
  && mv phalcon-devtools-3.4.3 /usr/src/phalcon-devtools \
  && ln -sf /usr/src/phalcon-devtools/phalcon /usr/local/bin/phalcon
 
-WORKDIR /var/www/html
+WORKDIR /var/www/html/
 
-CMD phalcon serve
+COPY ./entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+
+ENTRYPOINT ["sh", "/usr/local/bin/docker-entrypoint.sh"]
